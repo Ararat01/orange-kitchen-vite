@@ -10,7 +10,7 @@ function App() {
     <div className="mainPage">
       <aside>
         <QRCodeCanvas
-          value={"http://172.20.10.4:5173/"}
+          value={"https://orange-kitchen-vite.vercel.app/"}
           size={400}
           bgColor="#ffffff"
           fgColor="#000000"
