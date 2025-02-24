@@ -24,7 +24,7 @@ export const Main = () => {
 
     useEffect(() => {
         if (sliderRef.current) {
-            sliderRef.current.style.transform = `translateX(-${currentIndex * (100 / 3)}%)`;
+            sliderRef.current.style.left = `-${currentIndex * (100)}%`;
         }
     }, [currentIndex]);
 
@@ -72,6 +72,11 @@ export const Main = () => {
                             <button>More</button>
                         </div>
                     </div>
+                </div>
+                <div className={styles.slider_dots}>
+                    <button className={currentIndex === 0 ? styles.active : ""} onClick={() => setCurrentIndex(0)}></button>
+                    <button className={currentIndex === 1 ? styles.active : ""} onClick={() => setCurrentIndex(1)}></button>
+                    <button className={currentIndex === 2 ? styles.active : ""} onClick={() => setCurrentIndex(2)}></button>
                 </div>
             </div>
         </div>
