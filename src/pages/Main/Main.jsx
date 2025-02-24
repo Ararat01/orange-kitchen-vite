@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Header } from '../../components/Header/Header'
 import styles from './Main.module.scss';
 import { SearchIcon } from './../../icons/SearchIcon';
+import { ArrowIcon } from './../../icons/ArrowIcon';
+import { PlusIcon } from './../../icons/PlusIcon';
 
 export const Main = () => {
 
@@ -59,16 +61,16 @@ export const Main = () => {
                         </div>
                     </div>
                     <div>
-                        <img src="/images/slider2.png" alt="Slider 2" />
+                        <img src="/images/slider3.png" alt="Slider 3" />
                         <div className={styles.slider_text}>
-                            <h4>Your Table Awaits</h4>
+                            <h4>Try Something New</h4>
                             <button>More</button>
                         </div>
                     </div>
                     <div>
-                        <img src="/images/slider3.png" alt="Slider 3" />
+                        <img src="/images/slider2.png" alt="Slider 2" />
                         <div className={styles.slider_text}>
-                            <h4>Your Table Awaits</h4>
+                            <h4>Pure Sips, Pure Energy</h4>
                             <button>More</button>
                         </div>
                     </div>
@@ -77,6 +79,51 @@ export const Main = () => {
                     <button className={currentIndex === 0 ? styles.active : ""} onClick={() => setCurrentIndex(0)}></button>
                     <button className={currentIndex === 1 ? styles.active : ""} onClick={() => setCurrentIndex(1)}></button>
                     <button className={currentIndex === 2 ? styles.active : ""} onClick={() => setCurrentIndex(2)}></button>
+                </div>
+            </div>
+            <div className={`container ${styles.prodComponent}`}>
+                <button><span>Most loved</span><ArrowIcon /></button>
+                <div className={`${styles.prods}`}>
+                    {[...Array(6)].map((_, i) => {
+                        return <div key={i} className={styles.prods_el}>
+                            <img src="/images/prod.png" alt="" />
+                            <h5>Chicken Breast with Salsa</h5>
+                            <div>
+                                <span>$20.59</span>
+                                <button><PlusIcon /></button>
+                            </div>
+                        </div>
+                    })}
+                </div>
+            </div>
+            <div className={`container ${styles.prodComponent}`}>
+                <button><span>Most loved</span><ArrowIcon /></button>
+                <div className={`${styles.prods}`}>
+                    {[...Array(6)].map((_, i) => {
+                        return <div key={i} className={styles.prods_el}>
+                            <img src="/images/prod.png" alt="" />
+                            <h5>Chicken Breast with Salsa</h5>
+                            <div>
+                                <span>$20.59</span>
+                                <button><PlusIcon /></button>
+                            </div>
+                        </div>
+                    })}
+                </div>
+            </div>
+            <div className={`container ${styles.prodComponent}`}>
+                <button><span>Most loved</span><ArrowIcon /></button>
+                <div className={`${styles.prods}`}>
+                    {[...Array(6)].map((_, i) => {
+                        return <div key={i} className={styles.prods_el}>
+                            <img src="/images/prod.png" alt="" />
+                            <h5>Chicken Breast with Salsa</h5>
+                            <div>
+                                <span>$20.59</span>
+                                <button><PlusIcon /></button>
+                            </div>
+                        </div>
+                    })}
                 </div>
             </div>
         </div>
