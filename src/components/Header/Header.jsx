@@ -11,6 +11,8 @@ import { CompareIcon } from './../../icons/CompareIcon';
 import { AboutIcon } from './../../icons/AboutIcon';
 import { PhoneIcon } from './../../icons/PhoneIcon';
 import { CloseIcon } from './../../icons/CloseIcon';
+import { ExitIcon } from './../../icons/ExitIcon';
+import { SettingIcon } from './../../icons/SettingIcon';
 
 export const Header = () => {
     const [menuState, setMenuState] = useState(false)
@@ -45,6 +47,10 @@ export const Header = () => {
                     <div><CompareIcon /> <span>Compare Dishes</span></div>
                     <div><AboutIcon /> <span>About Us</span></div>
                     <div><PhoneIcon /> <span>Contacts</span></div>
+                </div>
+                <div className={styles.menu_actions}>
+                    <div><SettingIcon /> <span>Settings</span></div>
+                    <div><ExitIcon /> <span>Logout</span></div>
                 </div>
             </div>
         </header>

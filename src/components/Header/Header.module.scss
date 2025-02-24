@@ -22,13 +22,19 @@ header {
         position: absolute;
         left: 0;
         top: 0;
+        min-width: 240px;
         height: 100dvh;
         background-color: var(--white);
-        padding: 24px 40px 48px 16px;
+        padding: 24px 16px 48px 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
         &_close {
             display: flex;
             align-items: center;
             justify-content: flex-end;
+            width: 100%;
         }
         &_user {
             display: flex;
@@ -40,8 +46,9 @@ header {
             display: flex;
             flex-direction: column;
             gap: 16px;
+            flex: 1;
             div {
-                padding: 15px 0;
+                padding: 12px 0;
                 display: flex;
                 align-items: center;
                 gap: 10px;
@@ -49,8 +56,28 @@ header {
                     font-weight: 500;
                     font-size: 18px;
                     line-height: 18px;
-                    letter-spacing: 0%;
                     text-align: center;
+                }
+            }
+        }
+        &_actions {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            div {
+                padding: 10px 0;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                span {
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 18px;
+                    text-align: center;
+                    color: var(--black);
+                }
+                &:last-child span {
+                    color: var(--alert-red);
                 }
             }
         }
