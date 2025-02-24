@@ -4,9 +4,10 @@ import styles from './Main.module.scss';
 import { SearchIcon } from './../../icons/SearchIcon';
 import { ArrowIcon } from './../../icons/ArrowIcon';
 import { PlusIcon } from './../../icons/PlusIcon';
+import { useNavigate } from 'react-router-dom';
 
 export const Main = () => {
-
+    const navigate = useNavigate()
     const [currentIndex, setCurrentIndex] = useState(0);
     const sliderRef = useRef(null);
 
@@ -38,7 +39,7 @@ export const Main = () => {
                     <input type="text" placeholder='Search' />
                     <SearchIcon />
                 </div>
-                <button className={styles.search_btn}>
+                <button className={styles.search_btn} onClick={() => navigate("/menu")}>
                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <mask id="mask0_485_7701" maskUnits="userSpaceOnUse" x="0" y="0" width="28" height="28">
                             <rect width="28" height="28" fill="#D9D9D9" />
@@ -97,7 +98,7 @@ export const Main = () => {
                 </div>
             </div>
             <div className={`container ${styles.prodComponent}`}>
-                <button><span>Most loved</span><ArrowIcon /></button>
+                <button><span>Healthy Choices</span><ArrowIcon /></button>
                 <div className={`${styles.prods}`}>
                     {[...Array(6)].map((_, i) => {
                         return <div key={i} className={styles.prods_el}>
@@ -112,7 +113,7 @@ export const Main = () => {
                 </div>
             </div>
             <div className={`container ${styles.prodComponent}`}>
-                <button><span>Most loved</span><ArrowIcon /></button>
+                <button><span>Wake up drinks</span><ArrowIcon /></button>
                 <div className={`${styles.prods}`}>
                     {[...Array(6)].map((_, i) => {
                         return <div key={i} className={styles.prods_el}>

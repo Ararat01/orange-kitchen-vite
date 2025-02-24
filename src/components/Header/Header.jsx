@@ -27,7 +27,7 @@ export const Header = () => {
             <button>
                 <CartIcon />
             </button>
-            <div className={styles.menu_bg} style={{ zIndex: menuState ? "0" : "-1", opacity: menuState ? 1 : 0 }} onClick={() => setMenuState(false)}></div>
+            <div className={styles.menu_bg} style={{ left: menuState ? "0" : "-100%", opacity: menuState ? 1 : 0 }} onClick={() => setMenuState(false)}></div>
             <div className={styles.menu} style={{ left: menuState ? "0" : "-240px" }}>
                 <div className={styles.menu_close}>
                     <button onClick={() => setMenuState(false)}>

@@ -3,6 +3,7 @@ import { QRCodeCanvas } from 'qrcode.react'
 
 import './App.scss'
 import { Main } from './pages/Main/Main'
+import { Menu } from './pages/Menu/Menu';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />} />
+          <Route path="/menu" element={<Menu />} />
         </Routes>
       </BrowserRouter>
     </div>

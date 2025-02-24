@@ -1,0 +1,28 @@
+.menu {
+    &_back {
+        padding: 24px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        span {
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 28px;
+        }
+    }
+    &_categories {
+        display: flex;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 4px;
+        padding-bottom: 40px;
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            background-color: #F8FAF5;
+            border-radius: 10px;
+        }
+    }
+}
