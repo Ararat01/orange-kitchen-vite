@@ -11,6 +11,11 @@
     --alert-red: #de4841;
     --black: #000;
 }
+body {
+    overflow: hidden;
+    width: 1280px;
+    background-color: var(--black);
+}
 
 button {
     border: none;
@@ -29,6 +34,40 @@ input:focus {
     padding-right: 16px !important;
 }
 
+.modal-container {
+    position: absolute;
+    max-width: 100%;
+    width: 393px;
+    overflow: hidden;
+    height: 0;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    z-index: 100;
+}
+
+.modal {
+    position: absolute;
+    bottom: -100%;
+    width: 393px;
+    right: 0;
+    height: 500px;
+    border-radius: 10px 10px 0 0;
+    background-color: var(--white);
+    transition: bottom 0.3s ease-in-out;
+    &.opened {
+        bottom: 0;
+    }
+    &_bg {
+        position: absolute;
+        height: 100dvh;
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+
 .mobile {
     width: 393px;
     max-width: 100%;
@@ -36,8 +75,13 @@ input:focus {
     background-color: var(--white);
     overflow-x: hidden;
     &::-webkit-scrollbar {
-        display: none; 
+        display: none;
     }
+}
+
+.hidden {
+    height: 100dvh;
+    overflow: hidden;
 }
 
 @media (max-width: 700px) {
@@ -46,5 +90,8 @@ input:focus {
         max-width: 100%;
         height: 100%;
         background-color: var(--white);
+    }
+    .modal-container {
+        width: 100%;
     }
 }

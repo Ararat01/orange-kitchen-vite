@@ -5,11 +5,14 @@ import { SearchIcon } from './../../icons/SearchIcon';
 import { ArrowIcon } from './../../icons/ArrowIcon';
 import { PlusIcon } from './../../icons/PlusIcon';
 import { useNavigate } from 'react-router-dom';
+import { ProdCard } from '../../components/ProdCard/ProdCard';
 
 export const Main = () => {
     const navigate = useNavigate()
     const [currentIndex, setCurrentIndex] = useState(0);
     const sliderRef = useRef(null);
+    const [modalState, setModalState] = useState(false)
+
 
     const intervalDuration = 5000;
 
@@ -85,46 +88,24 @@ export const Main = () => {
             <div className={`container ${styles.prodComponent}`}>
                 <button><span>Most loved</span><ArrowIcon /></button>
                 <div className={`${styles.prods}`}>
-                    {[...Array(6)].map((_, i) => {
-                        return <div key={i} className={styles.prods_el}>
-                            <img src="/images/prod.png" alt="" />
-                            <h5>Chicken Breast with Salsa</h5>
-                            <div>
-                                <span>$20.59</span>
-                                <button><PlusIcon /></button>
-                            </div>
-                        </div>
-                    })}
+                    {[...Array(6)].map((_, i) => <ProdCard modalState={modalState} changeOverflow={setModalState} key={i} />)}
                 </div>
             </div>
             <div className={`container ${styles.prodComponent}`}>
                 <button><span>Healthy Choices</span><ArrowIcon /></button>
                 <div className={`${styles.prods}`}>
-                    {[...Array(6)].map((_, i) => {
-                        return <div key={i} className={styles.prods_el}>
-                            <img src="/images/prod.png" alt="" />
-                            <h5>Chicken Breast with Salsa</h5>
-                            <div>
-                                <span>$20.59</span>
-                                <button><PlusIcon /></button>
-                            </div>
-                        </div>
-                    })}
+                    {[...Array(6)].map((_, i) => <ProdCard modalState={modalState} changeOverflow={setModalState} key={i} />)}
                 </div>
             </div>
             <div className={`container ${styles.prodComponent}`}>
                 <button><span>Wake up drinks</span><ArrowIcon /></button>
                 <div className={`${styles.prods}`}>
-                    {[...Array(6)].map((_, i) => {
-                        return <div key={i} className={styles.prods_el}>
-                            <img src="/images/prod.png" alt="" />
-                            <h5>Chicken Breast with Salsa</h5>
-                            <div>
-                                <span>$20.59</span>
-                                <button><PlusIcon /></button>
-                            </div>
-                        </div>
-                    })}
+                    {[...Array(6)].map((_, i) => <ProdCard modalState={modalState} changeOverflow={setModalState} key={i} />)}
+                </div>
+            </div>
+            <div className="modal-container" onClick={() => setModalState(false)} style={modalState ? { height: "100dvh", overflow: "hidden" } : {}}>
+                <div className={`container modal ${modalState ? "opened" : ""}`}>
+                    <div className={styles.prods_modal_bg}></div>
                 </div>
             </div>
         </div>

@@ -4,11 +4,20 @@ import { QRCodeCanvas } from 'qrcode.react'
 import './App.scss'
 import { Main } from './pages/Main/Main'
 import { Menu } from './pages/Menu/Menu';
+import { Category } from './pages/Category/Category';
 
 function App() {
 
   return (
     <div className="mainPage">
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/menu/:category" element={<Category />} />
+        </Routes>
+      </BrowserRouter>
       <aside>
         <QRCodeCanvas
           value={"https://orange-kitchen-vite.vercel.app/"}
@@ -18,12 +27,6 @@ function App() {
           level="H"
         />
       </aside>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/menu" element={<Menu />} />
-        </Routes>
-      </BrowserRouter>
     </div>
   )
 }
