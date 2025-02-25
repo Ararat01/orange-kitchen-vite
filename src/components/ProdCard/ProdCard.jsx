@@ -13,7 +13,7 @@ export const ProdCard = ({ modalState, changeOverflow = () => { } }) => {
     return (
         <div className={styles.prods_el} onClick={() => setOpenModal(true)}>
             <img src="/images/prod.png" alt="" />
-            <h5>Chicken Breast with Salsa</h5>
+            <h5>Beef with Salsa</h5>
             <div>
                 <span>$20.59</span>
                 <button><PlusIcon /></button>

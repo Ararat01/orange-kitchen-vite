@@ -18,6 +18,10 @@ body {
     background-color: var(--black);
 }
 
+svg {
+    cursor: pointer;
+}
+
 button {
     border: none;
     background-color: transparent;
@@ -212,7 +216,7 @@ input:focus {
     overflow: hidden;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 793px) {
     .mobile {
         width: 100%;
         max-width: 100%;

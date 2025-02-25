@@ -24,7 +24,7 @@ export const Header = () => {
                 <BurgerIcon />
             </button>
             <Link to={"/"}><img className={styles.logo} src="/logo.png" alt="" /></Link>
-            <button>
+            <button onClick={() => navigate("/cart")}>
                 <CartIcon />
             </button>
             <div className={styles.menu_bg} style={{ left: menuState ? "0" : "-100%", opacity: menuState ? 1 : 0 }} onClick={() => setMenuState(false)}></div>
