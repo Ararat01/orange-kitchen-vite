@@ -50,6 +50,7 @@
             }
             input {
                 flex: 1;
+                width: 100%;
                 border: 2px solid #929ba7;
                 border-radius: 10px;
                 padding: 14px;
@@ -97,6 +98,7 @@
                 display: inline-flex;
                 align-items: center;
                 gap: 16px;
+                color: var(--black);
                 b {
                     font-weight: 400;
                     font-size: 12px;
