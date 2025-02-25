@@ -104,8 +104,9 @@ export const Main = () => {
                 </div>
             </div>
             <div className="modal-container" onClick={() => setModalState(false)} style={modalState ? { height: "100dvh", overflow: "hidden" } : {}}>
-                <div className={`container modal ${modalState ? "opened" : ""}`}>
-                    <div className={styles.prods_modal_bg}></div>
+                <div className={`modal ${modalState ? "opened" : ""}`}>
+                    <div className="modal_bg"></div>
+                    <img src="images/modal.png" alt="" />
                 </div>
             </div>
         </div>

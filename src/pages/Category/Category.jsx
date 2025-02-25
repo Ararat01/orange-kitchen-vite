@@ -6,6 +6,9 @@ import { ArrowIcon } from '../../icons/ArrowIcon';
 import { PlusIcon } from '../../icons/PlusIcon';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ProdCard } from '../../components/ProdCard/ProdCard';
+import { MinusIcon } from './../../icons/MinusIcon';
+import { AddIcon } from './../../icons/AddIcon';
+import { CloseIcon } from '../../icons/CloseIcon';
 
 export const Category = () => {
     const navigate = useNavigate()
@@ -33,7 +36,7 @@ export const Category = () => {
 
                 </button>
             </div>
-            <button className={`container ${styles.category_back}`}>
+            <button className={`container ${styles.category_back}`} onClick={() => navigate("/")}>
                 <ArrowIcon size='36' deg="180" />
                 <span>{category}</span>
             </button>
@@ -43,9 +46,57 @@ export const Category = () => {
                 </div>
 
             </div>
-            <div className="modal-container" onClick={() => setModalState(false)} style={modalState ? { height: "100dvh", overflow: "hidden" } : {}}>
-                <div className={`container modal ${modalState ? "opened" : ""}`}>
-                    <div className={styles.prods_modal_bg}></div>
+            <div className="modal-container" style={modalState ? { height: "100dvh", overflow: "hidden" } : {}}>
+
+                <div className="modal_bg" onClick={() => setModalState(false)}></div>
+                <div className={`modal ${modalState ? "opened" : ""}`}>
+                    <div className='modal_image'>
+                        <img src="/images/modal.png" alt="" />
+                        <div className='modal_close' onClick={() => setModalState(false)}>
+                            <CloseIcon />
+                        </div>
+                    </div>
+                    <div className='container modal_info'>
+                        <h3>Beef with Salsa</h3>
+                        <p>avocado, pesto, tomato, jalapeno pepper</p>
+                        <h4><span>$20.59</span> <b></b> <span>350g</span></h4>
+                        <div className='modal_info-porc'>
+                            <div className='modal_info-porc_el'>
+                                <h5>kkal</h5>
+                                <div className='kkal'>
+                                    <span>605</span>
+                                </div>
+                            </div>
+                            <div className='modal_info-porc_el'>
+                                <h5>protein</h5>
+                                <div className='protein'>
+                                    <span>39</span>
+                                </div>
+                            </div>
+                            <div className='modal_info-porc_el'>
+                                <h5>fat</h5>
+                                <div className='fat'>
+                                    <span>37</span>
+                                </div>
+                            </div>
+                            <div className='modal_info-porc_el'>
+                                <h5>carbs</h5>
+                                <div className='carbs'>
+                                    <span>20</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='modal_info-toCart'>
+                            <div className='count'>
+                                <MinusIcon />
+                                <span>1</span>
+                                <AddIcon />
+                            </div>
+                            <button>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
