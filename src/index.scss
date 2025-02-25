@@ -48,6 +48,8 @@ input:focus {
 
 .modal {
     position: absolute;
+    overflow: auto;
+    max-height: 100dvh;
     bottom: -100%;
     width: 100%;
     right: 0;
@@ -71,6 +73,7 @@ input:focus {
         position: absolute;
         right: 16px;
         top: 16px;
+        cursor: pointer;
         z-index: 1;
     }
     &.opened {
@@ -87,7 +90,7 @@ input:focus {
     }
 
     &_info {
-        padding-bottom: 48px;
+        padding-bottom: 24px;
         h3 {
             font-weight: 500;
             font-size: 20px;
