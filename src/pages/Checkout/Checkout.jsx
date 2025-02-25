@@ -61,7 +61,7 @@ export const Checkout = () => {
                         <h4>$25.59</h4>
                     </div>
                     <button onClick={() => navigate("/checkout")}>
-                        Checkout
+                        Pay Now
                     </button>
                 </div>
             </div>
